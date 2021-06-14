@@ -2407,7 +2407,7 @@ textarea:focus {
     top: 0;
     min-height: 100%;
     left: 0;
-    /* z-index: 5000; */
+    z-index: 5000;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -4341,6 +4341,11 @@ textarea:focus {
     padding: 40px;
 }
 
+@media (min-width: 992px){
+    .modal-lg {
+        max-width: 750px;
+    }
+}
 
 /* ----- Order List ----- */
 
