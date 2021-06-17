@@ -80,7 +80,7 @@ class GenerateBonusPasif extends Command
                 $amount = $value->amount;
                 $percent = $value->package->roi;
                 $bonus = $amount * $percent;
-                $type = $value->description;
+                $type = $value->package->description;
                 $wallet_name = 'Cash Wallet';
                 if($type == 'Networker'){
                     $wallet_name = 'Register Wallet';
