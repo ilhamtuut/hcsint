@@ -55,7 +55,7 @@ class ConvertController extends Controller
     {
         if(!Auth::user()->question){
             $request->session()->flash('failed', 'Please enter your secret answer first');
-            return redirect()->route('question.answer')->with(['link'=>route('convert.voucher')]);
+            return redirect()->route('question.answer')->with(['link'=>route('convert.index')]);
         }
         $price = AvCoin::price();
         $exchange = Setting::where('name','Exchange Convert')->first()->value;

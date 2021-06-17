@@ -98,6 +98,7 @@
                 {{-- <li class="{{ isset($active) && $active == 'metatrader' ? 'active' : '' }}"><a href="{{ route('metatrader.list') }}">- Meta Trader</a></li> --}}
                 {{-- <li class="{{ isset($active) && $active == 'video' ? 'active' : '' }}"><a href="{{ route('video.index') }}">- Asset Crypto</a></li> --}}
                 <li class="{{ isset($active) && $active == 'question' ? 'active' : '' }}"><a href="{{ route('question.index') }}">- Question</a></li>
+                <li class="{{ isset($active) && $active == 'composition' ? 'active' : '' }}"><a href="{{ route('setting.composition') }}">- Composition</a></li>
             </ul>
         </li>
 

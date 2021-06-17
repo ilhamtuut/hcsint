@@ -63,7 +63,7 @@ class ProgramController extends Controller
         $this->validate($request, [
             'package'=>'required|numeric',
             'wallet'=>'required',
-            'agree'=>'required',
+            // 'agree'=>'required',
             'pin_authenticator'=>'required'
         ]);
 
@@ -94,9 +94,9 @@ class ProgramController extends Controller
             }elseif($wallet == 2){
                 $composition = Composition::where('name','Register 2')->first();
                 $amount_one = $amount * $composition->one;
-                $amount_two = 0;
-                $amount_three = $amount * $composition->two;
-                if($amount_one <= $walletOne->balance && $amount_three <= $walletThree->balance){
+                $amount_two = $amount * $composition->two;
+                $amount_three = 0;
+                if($amount_one <= $walletOne->balance && $amount_two <= $walletTwo->balance){
                     $benar = true;
                 }
             }

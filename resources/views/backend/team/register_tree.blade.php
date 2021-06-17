@@ -153,7 +153,7 @@
                         if(item.id == 1){
                             composition[i] = "<option value='" + item.id + "' data-one='" + item.one + "' data-two='" + item.two + "' data-three='" + item.three + "'>HCS Wallet " + item.one * 100 + "% & Register Wallet " + item.two * 100 + "%</option>";
                         }else if(item.id == 2){
-                            composition[i] = "<option value='" + item.id + "' data-one='" + item.one + "' data-two='" + item.two + "' data-three='" + item.three + "'>HCS Wallet " + item.one * 100 + "% & Cash Wallet " + item.two * 100 + "%</option>";
+                            composition[i] = "<option value='" + item.id + "' data-one='" + item.one + "' data-two='" + item.two + "' data-three='" + item.three + "'>HCS Wallet " + item.one * 100 + "% & Register Wallet " + item.two * 100 + "%</option>";
                         }
                     });
                     $('#package').append(plan);

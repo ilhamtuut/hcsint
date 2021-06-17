@@ -63,9 +63,9 @@
                 <input id="password" name="pin_authenticator" type="password" placeholder="PIN Authenticator" class="form-control">
                 <p id="text-password" class="text-helper text-danger"></p>
             </div>
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <div class="checkbox i-checks" onclick="confirmCheck('show')"><label> <input id="agree" name="agree" type="checkbox"><i></i>  I Agree to the terms of use. </label></div>
-            </div>
+            </div> --}}
 
             <div class="ln_solid"></div>
             <div class="text-right" id="action">
@@ -129,7 +129,7 @@
 @section('script')
     <script type="text/javascript">
     	var one,two,three,package,nomimal1,nomimal2;
-        $("#modal_info").modal('show');
+        // $("#modal_info").modal('show');
         $('#plan_type').on('change', function() {
 	        var value = $(this).val();
             if(value){
@@ -160,7 +160,7 @@
                             if(item.id == 1){
                                 composition[i] = "<option value='" + item.id + "' data-one='" + item.one + "' data-two='" + item.two + "' data-three='" + item.three + "'>HCS Wallet " + item.one * 100 + "% & Register Wallet " + item.two * 100 + "%</option>";
                             }else if(item.id == 2){
-                                composition[i] = "<option value='" + item.id + "' data-one='" + item.one + "' data-two='" + item.two + "' data-three='" + item.three + "'>HCS Wallet " + item.one * 100 + "% & Cash Wallet " + item.two * 100 + "%</option>";
+                                composition[i] = "<option value='" + item.id + "' data-one='" + item.one + "' data-two='" + item.two + "' data-three='" + item.three + "'>HCS Wallet " + item.one * 100 + "% & Register Wallet " + item.two * 100 + "%</option>";
                             }
                         });
                         $('#package').append(plan);

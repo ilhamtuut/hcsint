@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Bank;
 use App\Models\Package;
 use App\Models\Setting;
+use App\Models\Composition;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -156,4 +157,37 @@ class SettingController extends Controller
         }
         return redirect()->back();
     }
+
+    public function composition()
+    {
+        $data = Composition::get();
+        return view('backend.setting.komposisi',compact('data'));
+    }
+
+    public function updateComposition(Request $request)
+    {
+        $this->validate($request, [
+            'id' => 'required',
+            'composition1'=>'required|numeric',
+            'composition2'=>'required|numeric',
+            'pin_authenticator'=>'required'
+        ]);
+
+        $hasPassword = Hash::check($request->pin_authenticator, Auth::user()->trx_password);
+        if($hasPassword){
+            if($request->composition1 + $request->composition2 == 100){
+                $data = Composition::find($request->id)->update([
+                    'one' => $request->composition1/100,
+                    'two' => $request->composition2/100
+                ]);
+                $request->session()->flash('success', 'Successfully, Update data composition');
+            }else{
+                $request->session()->flash('failed', 'Failed, number of compositions must be 100');
+            }
+        }else{
+            $request->session()->flash('failed', 'Failed, Password is wrong');
+        }
+        return redirect()->back();
+    }
+
 }
