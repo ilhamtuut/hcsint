@@ -171,7 +171,7 @@
         if(value != ''){
             package = $(this).find(':selected').data('amount');
             var wallet = $('#wallet').val();
-            if(wallet == 1){
+            if(wallet == 1 || wallet == 2){
                 nomimal1 = (package * one);
                 nomimal2 = (package * two);
                 $('#grp_input').removeClass('hidden');
@@ -183,7 +183,7 @@
 
                 $('#wallet_one').val(addCommas(parseFloat(nomimal1).toFixed(2)));
                 $('#wallet_two').val(addCommas(parseFloat(nomimal2).toFixed(2)));
-            }else if(wallet == 2){
+            }else if(wallet == 3){
                 nomimal1 = (package * one);
                 nomimal2 = (package * two);
                 $('#input_two').addClass('hidden');
@@ -209,7 +209,7 @@
         one = $(this).find(':selected').data('one');
         two = $(this).find(':selected').data('two');
         three = $(this).find(':selected').data('three');
-        if(value == 1){
+        if(value == 1 || value == 2){
             nomimal1 = (package * one);
             nomimal2 = (package * two);
             $('#grp_input').removeClass('hidden');
@@ -221,7 +221,7 @@
 
             $('#wallet_one').val(addCommas(parseFloat(nomimal1).toFixed(2)));
             $('#wallet_two').val(addCommas(parseFloat(nomimal2).toFixed(2)));
-        }else if(value == 2){
+        }else if(value == 3){
             nomimal1 = (package * one);
             nomimal2 = (package * two);
             $('#input_two').addClass('hidden');
