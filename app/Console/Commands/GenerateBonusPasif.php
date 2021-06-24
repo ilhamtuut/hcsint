@@ -54,7 +54,8 @@ class GenerateBonusPasif extends Command
                     ->whereNotIn('user_id', [1,2])
                     ->whereDate('created_at','!=',$datenow)
                     ->get();
-        $checkFolio = Portofolio::where('type','Regular')->orWhere('type','Networker')->whereDate('created_at', $datenow)->first();
+        $checkFolio = Portofolio::whereIn('type',['Regular','Networker'])
+                    ->whereDate('created_at', $datenow)->first();
         if(is_null($checkFolio)){
             $percentDay = Package::where('description','Regular')->first()->roi;
             Portofolio::create([
